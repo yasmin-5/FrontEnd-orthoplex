@@ -102,7 +102,7 @@ export const updateusers = createAsyncThunk(
           },
         }
       );
-      return res.data; // Returning the updated user data from the server
+      return res.data;
     } catch (error) {
       console.error("Error updating users:", error);
       throw error;
@@ -168,7 +168,7 @@ const usersSlice = createSlice({
         state.isLoadingArr = false;
         state.topUsers = action.payload;
       })
-      
+
       .addCase(getTopFreq.rejected, (state) => {
         state.isLoadingArr = false;
       })
